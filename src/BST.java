@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 /**
  * An Integer Binary Search Tree
- * @author: Your Name Here
- * @version: Date
+ * @author: Lucas C
+ * @version: some random date probably
  */
 
 public class BST {
@@ -48,7 +48,21 @@ public class BST {
      */
     public boolean search(int val) {
         // TODO: Complete the search function
+        if ()
+        {
+            return true;
+        }
         return false;
+    }
+
+    public boolean searchHelper(int val, BSTNode root)
+    {
+        if (val == root.getVal())
+        {
+            return true;
+        }
+
+        if(root.getLeft())
     }
 
     /**
