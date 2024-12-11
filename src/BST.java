@@ -46,9 +46,12 @@ public class BST {
      * @param val integer value to search for
      * @return true if val is in the tree, false otherwise
      */
-    public boolean search(int val) {
+    public boolean search(int val)
+    {
         // TODO: Complete the search function
-        if ()
+        boolean present = false;
+        present = searchHelper(val, this.getRoot());
+        if (present = true)
         {
             return true;
         }
@@ -57,20 +60,44 @@ public class BST {
 
     public boolean searchHelper(int val, BSTNode root)
     {
+        if (root == null)
+        {
+            return false;
+        }
         if (val == root.getVal())
         {
             return true;
         }
 
-        if(root.getLeft())
+        if(val < root.getVal())
+        {
+            return searchHelper(val, root.getLeft());
+        }
+        else
+        {
+            return searchHelper(val, root.getRight());
+        }
+
     }
 
     /**
      * @return ArrayList of BSTNodes in inorder
      */
-    public ArrayList<BSTNode> getInorder() {
+    public ArrayList<BSTNode> getInorder()
+    {
         // TODO: Complete inorder traversal
+        ArrayList<BSTNode> nodes = new ArrayList<BSTNode>;
         return null;
+    }
+
+    public ArrayList<BSTNode> getInorderHelper(BSTNode root, ArrayList<BSTNode> nodes)
+    {
+        if (root == null)
+        {
+            return nodes;
+        }
+
+
     }
 
     /**
@@ -78,6 +105,15 @@ public class BST {
      */
     public ArrayList<BSTNode> getPreorder() {
         // TODO: Complete preorder traversal
+        ArrayList<BSTNode> treeNodes = new ArrayList<BSTNode>;
+
+        return null;
+    }
+
+
+    public ArrayList<BSTNode> getPreorderHelper(BSTNode Root, ArrayList<BSTNode> treeNodes)
+    {
+
         return null;
     }
 
@@ -87,6 +123,11 @@ public class BST {
     public ArrayList<BSTNode> getPostorder() {
         // TODO: Complete postorder traversal
         return null;
+    }
+
+    public ArrayList<BSTNode> getPostorderHelper()
+    {
+
     }
 
     /**
