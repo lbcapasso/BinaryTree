@@ -86,18 +86,21 @@ public class BST {
     public ArrayList<BSTNode> getInorder()
     {
         // TODO: Complete inorder traversal
-        ArrayList<BSTNode> nodes = new ArrayList<BSTNode>;
-        return null;
+        ArrayList<BSTNode> nodes = new ArrayList<BSTNode>();
+        getInorderHelper(this.getRoot(), nodes);
+        return nodes;
     }
 
-    public ArrayList<BSTNode> getInorderHelper(BSTNode root, ArrayList<BSTNode> nodes)
+    public void getInorderHelper(BSTNode root, ArrayList<BSTNode> newNodes)
     {
         if (root == null)
         {
-            return nodes;
+            return;
         }
 
-
+        getInorderHelper(root.getLeft(), newNodes);
+        newNodes.add(root);
+        getInorderHelper(root.getRight(), newNodes);
     }
 
     /**
@@ -105,16 +108,24 @@ public class BST {
      */
     public ArrayList<BSTNode> getPreorder() {
         // TODO: Complete preorder traversal
-        ArrayList<BSTNode> treeNodes = new ArrayList<BSTNode>;
+        ArrayList<BSTNode> treeNodes = new ArrayList<BSTNode>();
 
-        return null;
+        ArrayList<BSTNode> nodes = new ArrayList<BSTNode>();
+        getPreorderHelper(this.getRoot(), nodes);
+        return nodes;
     }
 
 
-    public ArrayList<BSTNode> getPreorderHelper(BSTNode Root, ArrayList<BSTNode> treeNodes)
+    public void getPreorderHelper(BSTNode Root, ArrayList<BSTNode> newNodes)
     {
+        if (root == null)
+        {
+            return;
+        }
 
-        return null;
+        newNodes.add(root);
+        getInorderHelper(root.getLeft(), newNodes);
+        getInorderHelper(root.getRight(), newNodes);
     }
 
     /**
@@ -122,12 +133,21 @@ public class BST {
      */
     public ArrayList<BSTNode> getPostorder() {
         // TODO: Complete postorder traversal
-        return null;
+        ArrayList<BSTNode> nodes = new ArrayList<BSTNode>();
+        getPostorderHelper(this.getRoot(), nodes);
+        return nodes;
     }
 
-    public ArrayList<BSTNode> getPostorderHelper()
+    public void getPostorderHelper(BSTNode Root, ArrayList<BSTNode> newNodes)
     {
+        if (root == null)
+        {
+            return;
+        }
 
+        getInorderHelper(root.getLeft(), newNodes);
+        getInorderHelper(root.getRight(), newNodes);
+        newNodes.add(root);
     }
 
     /**
