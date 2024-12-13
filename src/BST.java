@@ -197,5 +197,6 @@ public class BST {
         System.out.println("\nInorder traversal of binary tree is");
         sol = tree.getInorder();
         printNodes(sol);
+
     }
 }
